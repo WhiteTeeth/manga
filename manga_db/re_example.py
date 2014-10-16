@@ -9,7 +9,7 @@ Version:    2012-11-16
 Author:     Crifan
 """
  
-import re;
+import re
  
 # 提示：
 # 在看此教程之前，请先确保已经对下列内容已了解：

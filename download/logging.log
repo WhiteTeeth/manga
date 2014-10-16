@@ -1,0 +1,5 @@
+[2014-10-16 22:26:10,167](DEBUG)main : debug message
+[2014-10-16 22:26:10,167](INFO)main : info message
+[2014-10-16 22:26:10,167](WARNING)main : warn message
+[2014-10-16 22:26:10,167](ERROR)main : error message
+[2014-10-16 22:26:10,168](CRITICAL)main : critical message

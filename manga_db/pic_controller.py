@@ -1,8 +1,9 @@
 # coding=utf-8
 __author__ = 'BaiYa'
 
-from manga_db import *
-from request import request
+from DBStore import *
+# from HttpRequest import request
+from HttpRequest import HttpRequest
 from bs4 import BeautifulSoup
 from assign import assign
 import re
@@ -23,7 +24,17 @@ class PicController:
     def refreshPlot(self):
         if(not self.plot): return
         link = self.plot.link
-        result = request(link).read()
+
+        httpRequest = HttpRequest(url=link)
+        httpRequest.request()
+
+        if httpRequest.status == 304:
+            return
+        elif httpRequest.status != 200:
+            print('httpRequest header:', httpRequest.header)
+            return
+        result = httpRequest.data
+        # result = request(link).read()
         findAll = re.findall(re_pics_url, result.decode('gbk').encode('utf-8'))
         if (not len(findAll)):
             return

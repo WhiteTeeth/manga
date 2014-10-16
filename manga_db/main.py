@@ -3,16 +3,18 @@ __author__ = 'BaiYa'
 
 import re
 from bs4 import BeautifulSoup
-from manga_db import *
+from DBStore import *
 from datetime import date, datetime
 
 Zimu_Url = 'http://www.jide123.com/zimu/%s.html'
 Base_Url = 'http://www.jide123.com'
 
 def zimu_parse(html):
+    if not html:
+        return []
+    mangas_link = []
     re_manga_info_simple = "<dt><a href=\"(\S*)\" title=\"[^\"]*\">[^<]*</a></dt>"
     findAll = re.findall(re_manga_info_simple, html)
-    mangas_link = []
     for item in findAll:
         link = Base_Url + item
         mangas_link.append(link)
@@ -24,7 +26,6 @@ def plot_parse(soup, source):
     plots = []
     plot_count = len(tag_a)
     for tag in tag_a:
-        print(tag)
         plot_link = Base_Url + tag['href']
         plot_index = plot_count - tag_a.index(tag)
         plot_title = tag.contents[0]
@@ -34,8 +35,11 @@ def plot_parse(soup, source):
 
 
 def manga_parse(html, source):
+    if not html:
+        Logger.info('html is empty!')
+        return None
     soup = BeautifulSoup(html, from_encoding='gbk')
-    # print(soup.prettify())
+    # Logger.debug(soup.prettify())
     intro = soup.find(id='intro_l')
     title = intro.find('h1').string.decode('utf-8').encode('utf-8')
     search = soup.find_all('p', attrs={'class':'w260'})
@@ -53,13 +57,6 @@ def manga_parse(html, source):
     up_time = datetime.strptime(up_time, '%Y-%m-%d').date()
     added_time = datetime.strptime(added_time, '%Y-%m-%d').date()
     plot = plot_parse(soup, source)
-    # print(title)
-    # print(author)
-    # print(cover)
-    # print(intro)
-    # print(search)
-    # print(added_time)
-    # print(up_time)
     return Manga(
         added_at=added_time,
         update_at=up_time,
@@ -70,8 +67,6 @@ def manga_parse(html, source):
         source=source,
         plot=plot)
 
-from request import request
-from html_parse.html_parse import *
 import pic_controller
 from pic_controller import *
 from assign import assign
@@ -89,39 +84,36 @@ def queryPlotWithIndex(index, plots):
         if(plot.index == index):
             return plot
     return None
-    # low = 0
-    # high = len(plots) - 1
-    # while(low <= high):
-    #     mid = (low + high) / 2
-    #     midIndex = plots[mid].index
-    #     if(midIndex < index):
-    #         low = mid + 1
-    #     elif(midIndex > index):
-    #         high = mid - 1
-    #     else:
-    #         return plots[mid]
-    # return None
     pass
 
-if __name__ == '__main__':
+from HttpRequest import request
+import Logger
+
+if __name__  == '__main__':
+    init_db()
     for index in initials:
-        if (index != 'a'): break
+        if (index != 'u'): continue
 
-        result = request(str(Zimu_Url % index)).read()
-        mangas_link = zimu_parse(result.decode('gbk').encode('utf-8'))
+        url = str(Zimu_Url % index)
+        # result = request(url)
 
-        print(len(mangas_link))
+        httpRequest = HttpRequest(url=url)
+        httpRequest.request()
+        result = httpRequest
 
-        init_db()
-        Session = sessionmaker(bind=engine)
-        session = Session()
+        httpResponse = result.data
+
+        mangas_link = zimu_parse(httpResponse.decode('gbk').encode('utf-8'))
+
+        Logger.info(str('manga --%s-- count:%d' % (index, len(mangas_link))))
 
         for manga_link in mangas_link:
             # if(0 != mangas_link.index(manga_link)):
             #     continue
-            print(manga_link)
-            result = request(manga_link).read()
-            manga = manga_parse(result, manga_link)
+
+            httpResponse = request(manga_link).data
+            continue
+            manga = manga_parse(httpResponse, manga_link)
             query_result = session.query(Manga).filter(Manga.name==manga.name).first()
             if(query_result):
                 assign(manga.name, query_result.name)
@@ -138,9 +130,7 @@ if __name__ == '__main__':
                 # 根据plot.index排序
                 # query_result.plot.sort(key=lambda plot: plot.index)
                 for item in manga.plot:
-                    print(item.index)
                     query_plot = queryPlotWithIndex(item.index, query_result.plot)
-                    print(query_plot)
                     if (query_plot):
                         assign(item.title, query_plot.title)
                         assign(item.link, query_plot.link)
