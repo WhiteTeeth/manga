@@ -88,7 +88,6 @@ class Pic(Base):
     plot_id = Column(Integer, ForeignKey(str('%s.id' % str(Plot.__tablename__))))
     page = Column(Integer, nullable=False)
     link = Column(String, nullable=False)
-    source = Column(String, nullable=False)
     added_at = Column(DateTime, default=func.now())
 
     plot = relationship(Plot.__name__, backref = backref(__tablename__, order_by=id))

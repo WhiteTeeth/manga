@@ -68,7 +68,7 @@ def manga_parse(html, source):
         plot=plot)
 
 import pic_controller
-from pic_controller import *
+from pic_controller import PicController
 from assign import assign
 
 initials = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
@@ -87,6 +87,7 @@ def queryPlotWithIndex(index, plots):
     pass
 
 from HttpRequest import request
+from HttpRequest import HttpRequest
 import Logger
 
 if __name__  == '__main__':
@@ -108,42 +109,42 @@ if __name__  == '__main__':
         Logger.info(str('manga --%s-- count:%d' % (index, len(mangas_link))))
 
         for manga_link in mangas_link:
-            # if(0 != mangas_link.index(manga_link)):
-            #     continue
+            if(0 != mangas_link.index(manga_link)):
+                continue
 
-            httpResponse = request(manga_link).data
-            continue
+            result = request(manga_link)
+            if result.status != 200:
+                continue
+
+            httpResponse = result.data
+            #更新漫画剧情信息
             manga = manga_parse(httpResponse, manga_link)
-            query_result = session.query(Manga).filter(Manga.name==manga.name).first()
-            if(query_result):
-                assign(manga.name, query_result.name)
-                assign(manga.added_at, query_result.added_at)
-                assign(manga.update_at, query_result.update_at)
-                assign(manga.author, query_result.author)
-                assign(manga.source, query_result.source)
-                assign(manga.poster, query_result.poster)
-                assign(manga.introduction, query_result.introduction)
-                # 更新剧情信息
+            query = session.query(Manga).filter(Manga.name==manga.name).first()
+            if(query):
+                assign(manga.name, query.name)
+                assign(manga.added_at, query.added_at)
+                assign(manga.update_at, query.update_at)
+                assign(manga.author, query.author)
+                assign(manga.source, query.source)
+                assign(manga.poster, query.poster)
+                assign(manga.introduction, query.introduction)
 
-                ''' 已知元素X有index属性。数组A中有i个元素，数组B中有j个元素，遍历数组A，并找到B中含有相同index属性的元素，更新或添加到A中？
-                '''
-                # 根据plot.index排序
-                # query_result.plot.sort(key=lambda plot: plot.index)
+                # 更新剧情信息
                 for item in manga.plot:
-                    query_plot = queryPlotWithIndex(item.index, query_result.plot)
+                    query_plot = queryPlotWithIndex(item.index, query.plot)
                     if (query_plot):
                         assign(item.title, query_plot.title)
                         assign(item.link, query_plot.link)
                     else:
-                        plot_new = Plot(manga_id=query_result.id, link=item.link, title=item.title, index=item.index)
-                        query_result.plot.append(plot_new)
+                        plot_new = Plot(manga_id=query.id, link=item.link, title=item.title, index=item.index)
+                        query.plot.append(plot_new)
             else:
                 session.add(manga)
             session.commit()
 
-            query_result = session.query(Manga).filter(Manga.name==manga.name).first()
-            print(query_result.plot)
-            plots = query_result.plot
+            #更新单集漫画信息
+            query = session.query(Manga).filter(Manga.name==manga.name).first()
+            plots = query.plot
             for plot in plots:
                 pic_controller = PicController(plot.id)
                 pic_controller.refreshPlot()

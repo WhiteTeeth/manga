@@ -18,6 +18,7 @@ def request(url):
     httpRequest = HttpRequest(url=url, lastModified=last_modified, etag=etag)
     httpRequest.request()
 
+    Logger.info(str('request status: %d' % httpRequest.status))
     if httpRequest.status == 304:
         pass
     elif httpRequest.status != 200:
@@ -33,7 +34,6 @@ def request(url):
             session.add(query_request)
 
         session.commit()
-    Logger.info(str('request status: %d' % httpRequest.status))
     Logger.info(str('request stop url: %s' % url))
     return httpRequest
 

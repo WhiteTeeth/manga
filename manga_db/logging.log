@@ -1,77 +1,45 @@
-[2014-10-16 23:38:48,571] (INFO) file : manga --u-- count:16
-[2014-10-16 23:38:48,572] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
-[2014-10-16 23:39:10,490] (INFO) file : request status: 200
-[2014-10-16 23:39:10,490] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
-[2014-10-16 23:39:10,492] (INFO) file : request start url: http://www.jide123.com/manhua/3596/
-[2014-10-16 23:39:32,200] (INFO) file : request status: 200
-[2014-10-16 23:39:32,200] (INFO) file : request stop url: http://www.jide123.com/manhua/3596/
-[2014-10-16 23:39:32,201] (INFO) file : request start url: http://www.jide123.com/manhua/19852/
-[2014-10-16 23:39:35,816] (INFO) file : request status: 200
-[2014-10-16 23:39:35,816] (INFO) file : request stop url: http://www.jide123.com/manhua/19852/
-[2014-10-16 23:39:35,818] (INFO) file : request start url: http://www.jide123.com/manhua/15870/
-[2014-10-16 23:39:42,387] (INFO) file : request status: 200
-[2014-10-16 23:39:42,387] (INFO) file : request stop url: http://www.jide123.com/manhua/15870/
-[2014-10-16 23:39:42,387] (INFO) file : request start url: http://www.jide123.com/manhua/15876/
-[2014-10-16 23:39:45,943] (INFO) file : request status: 200
-[2014-10-16 23:39:45,943] (INFO) file : request stop url: http://www.jide123.com/manhua/15876/
-[2014-10-16 23:39:45,943] (INFO) file : request start url: http://www.jide123.com/manhua/8086/
-[2014-10-16 23:41:11,167] (INFO) file : manga --u-- count:16
-[2014-10-16 23:41:11,167] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
-[2014-10-16 23:41:15,887] (INFO) file : request status: 304
-[2014-10-16 23:41:15,888] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
-[2014-10-16 23:41:15,888] (INFO) file : request start url: http://www.jide123.com/manhua/3596/
-[2014-10-16 23:41:23,081] (INFO) file : request status: 304
-[2014-10-16 23:41:23,082] (INFO) file : request stop url: http://www.jide123.com/manhua/3596/
-[2014-10-16 23:41:23,082] (INFO) file : request start url: http://www.jide123.com/manhua/19852/
-[2014-10-16 23:41:25,923] (INFO) file : request status: 304
-[2014-10-16 23:41:25,923] (INFO) file : request stop url: http://www.jide123.com/manhua/19852/
-[2014-10-16 23:41:25,923] (INFO) file : request start url: http://www.jide123.com/manhua/15870/
-[2014-10-16 23:42:44,187] (INFO) file : manga --u-- count:16
-[2014-10-16 23:42:44,187] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
-[2014-10-16 23:43:05,365] (INFO) file : request status: 304
-[2014-10-16 23:43:05,365] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
-[2014-10-16 23:43:05,365] (INFO) file : request start url: http://www.jide123.com/manhua/3596/
-[2014-10-16 23:43:05,536] (INFO) file : request status: 304
-[2014-10-16 23:43:05,538] (INFO) file : request stop url: http://www.jide123.com/manhua/3596/
-[2014-10-16 23:43:05,539] (INFO) file : request start url: http://www.jide123.com/manhua/19852/
-[2014-10-16 23:43:05,716] (INFO) file : request status: 304
-[2014-10-16 23:43:05,766] (INFO) file : request stop url: http://www.jide123.com/manhua/19852/
-[2014-10-16 23:43:05,766] (INFO) file : request start url: http://www.jide123.com/manhua/15870/
-[2014-10-16 23:43:05,959] (INFO) file : request status: 304
-[2014-10-16 23:43:05,960] (INFO) file : request stop url: http://www.jide123.com/manhua/15870/
-[2014-10-16 23:43:05,960] (INFO) file : request start url: http://www.jide123.com/manhua/15876/
-[2014-10-16 23:43:06,134] (INFO) file : request status: 304
-[2014-10-16 23:43:06,134] (INFO) file : request stop url: http://www.jide123.com/manhua/15876/
-[2014-10-16 23:43:06,135] (INFO) file : request start url: http://www.jide123.com/manhua/8086/
-[2014-10-16 23:43:06,788] (INFO) file : request status: 200
-[2014-10-16 23:43:06,788] (INFO) file : request stop url: http://www.jide123.com/manhua/8086/
-[2014-10-16 23:43:06,788] (INFO) file : request start url: http://www.jide123.com/manhua/8085/
-[2014-10-16 23:43:07,312] (INFO) file : request status: 200
-[2014-10-16 23:43:07,312] (INFO) file : request stop url: http://www.jide123.com/manhua/8085/
-[2014-10-16 23:43:07,312] (INFO) file : request start url: http://www.jide123.com/manhua/1878/
-[2014-10-16 23:43:07,964] (INFO) file : request status: 200
-[2014-10-16 23:43:07,966] (INFO) file : request stop url: http://www.jide123.com/manhua/1878/
-[2014-10-16 23:43:07,966] (INFO) file : request start url: http://www.jide123.com/manhua/2158/
-[2014-10-16 23:43:09,441] (INFO) file : request status: 200
-[2014-10-16 23:43:09,441] (INFO) file : request stop url: http://www.jide123.com/manhua/2158/
-[2014-10-16 23:43:09,443] (INFO) file : request start url: http://www.jide123.com/manhua/8084/
-[2014-10-16 23:43:10,305] (INFO) file : request status: 200
-[2014-10-16 23:43:10,430] (INFO) file : request stop url: http://www.jide123.com/manhua/8084/
-[2014-10-16 23:43:10,430] (INFO) file : request start url: http://www.jide123.com/manhua/15164/
-[2014-10-16 23:43:10,960] (INFO) file : request status: 200
-[2014-10-16 23:43:10,960] (INFO) file : request stop url: http://www.jide123.com/manhua/15164/
-[2014-10-16 23:43:10,961] (INFO) file : request start url: http://www.jide123.com/manhua/12613/
-[2014-10-16 23:43:11,944] (INFO) file : request status: 200
-[2014-10-16 23:43:11,944] (INFO) file : request stop url: http://www.jide123.com/manhua/12613/
-[2014-10-16 23:43:11,944] (INFO) file : request start url: http://www.jide123.com/manhua/11768/
-[2014-10-16 23:43:12,457] (INFO) file : request status: 200
-[2014-10-16 23:43:12,459] (INFO) file : request stop url: http://www.jide123.com/manhua/11768/
-[2014-10-16 23:43:12,460] (INFO) file : request start url: http://www.jide123.com/manhua/10915/
-[2014-10-16 23:43:12,969] (INFO) file : request status: 200
-[2014-10-16 23:43:12,969] (INFO) file : request stop url: http://www.jide123.com/manhua/10915/
-[2014-10-16 23:43:12,969] (INFO) file : request start url: http://www.jide123.com/manhua/10916/
-[2014-10-16 23:43:14,417] (INFO) file : request status: 200
-[2014-10-16 23:43:14,417] (INFO) file : request stop url: http://www.jide123.com/manhua/10916/
-[2014-10-16 23:43:14,417] (INFO) file : request start url: http://www.jide123.com/manhua/10914/
-[2014-10-16 23:43:15,082] (INFO) file : request status: 200
-[2014-10-16 23:43:15,082] (INFO) file : request stop url: http://www.jide123.com/manhua/10914/
+[2014-10-17 21:49:40,276] (INFO) file : request start url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 21:49:40,539] (INFO) file : request status: 200
+[2014-10-17 21:49:40,686] (INFO) file : request stop url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 21:53:21,299] (INFO) file : request start url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 21:53:21,559] (INFO) file : request status: 304
+[2014-10-17 21:53:21,559] (INFO) file : request stop url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 21:54:01,240] (INFO) file : request start url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 21:54:01,687] (INFO) file : request status: 200
+[2014-10-17 21:54:01,903] (INFO) file : request stop url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 21:54:01,907] (INFO) file : pic list plot_id: 1
+[2014-10-17 22:59:08,407] (INFO) file : request start url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 22:59:08,711] (INFO) file : request status: 304
+[2014-10-17 22:59:08,713] (INFO) file : request stop url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 22:59:43,661] (INFO) file : request start url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 22:59:43,809] (INFO) file : request status: 200
+[2014-10-17 22:59:43,930] (INFO) file : request stop url: http://www.jide123.com/manhua/18858/284654.html
+[2014-10-17 22:59:43,933] (INFO) file : pic list plot_id: 1
+[2014-10-17 23:31:03,390] (INFO) file : manga --u-- count:16
+[2014-10-17 23:31:03,391] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:31:03,586] (INFO) file : request status: 200
+[2014-10-17 23:31:03,890] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:32:08,141] (INFO) file : manga --u-- count:16
+[2014-10-17 23:32:08,142] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:32:08,407] (INFO) file : request status: 304
+[2014-10-17 23:32:08,407] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:32:30,040] (INFO) file : manga --u-- count:16
+[2014-10-17 23:32:30,040] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:32:30,509] (INFO) file : request status: 200
+[2014-10-17 23:32:30,608] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:32:30,809] (INFO) file : request start url: http://www.jide123.com/manhua/20362/285670.html
+[2014-10-17 23:32:31,207] (INFO) file : request status: 200
+[2014-10-17 23:32:31,477] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/285670.html
+[2014-10-17 23:32:31,482] (INFO) file : pic list plot_id: 1
+[2014-10-17 23:35:03,059] (INFO) file : manga --u-- count:16
+[2014-10-17 23:35:03,059] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:35:03,200] (INFO) file : request status: 304
+[2014-10-17 23:35:03,200] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:37:06,013] (INFO) file : manga --u-- count:16
+[2014-10-17 23:37:06,013] (INFO) file : request start url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:37:06,151] (INFO) file : request status: 200
+[2014-10-17 23:37:06,385] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/
+[2014-10-17 23:37:06,453] (INFO) file : request start url: http://www.jide123.com/manhua/20362/285670.html
+[2014-10-17 23:37:06,612] (INFO) file : request status: 200
+[2014-10-17 23:37:06,726] (INFO) file : request stop url: http://www.jide123.com/manhua/20362/285670.html
+[2014-10-17 23:37:06,727] (INFO) file : pic list plot_id: 1
