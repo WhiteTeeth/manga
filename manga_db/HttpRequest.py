@@ -6,12 +6,17 @@ import time
 from DBStore import *
 import Logger
 
-def request(url):
+def request(url, ignoreCache=False):
+    '''
+    :param url:
+    :param ignoreCache: 使用last_modified 和 etag
+    :return:
+    '''
     Logger.info(str('request start url: %s' % url))
     query_request = session.query(Request).filter(Request.url==url).first()
     last_modified = None
     etag = None
-    if query_request:
+    if (not ignoreCache) and query_request:
         last_modified = query_request.last_modified
         etag = query_request.etag
 
@@ -79,7 +84,6 @@ class HttpRequest(object):
         conn = urllib2.build_opener(DefaultErrorHandler()).open(request)
 
         if hasattr(conn, 'headers'):
-            # print(conn.headers)
             # save ETag, if the server sent one
             self.etag = conn.headers.get('ETag')
             # save Last-Modified header, if the server sent one
